@@ -2,18 +2,8 @@ require("../css/main.css");
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-var Test = React.createClass({
-	render:function() {
-		return(<h1>test</h1>)
-	}
-})
-
-ReactDOM.render(<Test />, document.getElementById('container'));
+var LoginRegister= require('./components/loginRegister.jsx')
 
 
+ReactDOM.render(<LoginRegister />, document.getElementById('loginRegister'));
 
-
-// $(document).ready(function(){
-//  var Router = require('./router.jsx');
-// });
