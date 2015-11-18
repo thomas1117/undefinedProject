@@ -1,0 +1,25 @@
+{
+  "name": "undefinedproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "css-loader": "^0.23.0",
+    "jquery": "^2.1.4",
+    "jsx-loader": "^0.13.2",
+    "json-loader": "^0.5.3",
+    "material-ui": "^0.13.3",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-tap-event-plugin": "^0.2.1",
+    "style-loader": "^0.13.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
