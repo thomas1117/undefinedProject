@@ -1,25 +1,21 @@
-require("../css/main.css");
+require("../css/listItem.css");
 require("../css/normalize.css");
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-var ListView = require("./components/listView.jsx");
-
-ReactDOM.render(<ListView />, document.getElementById("listView"));
-
-
-var GuestView = require("./components/guestView.jsx");
-
-ReactDOM.render(<GuestView />, document.getElementById("guestView"));
-
-
+var FunderDetail = require('./components/funderDetail.jsx');
 var FunderView = require("./components/funderView.jsx");
-
-ReactDOM.render(<FunderView />, document.getElementById("funderView"));
-
-
+var GuestView = require("./components/guestView.jsx");
 var ListDetail = require("./components/listDetail.jsx");
+var ListItem = require('./components/listitem.jsx');
+var ListView = require("./components/listView.jsx");
+var RegisterForm = require("./components/registerForm.jsx")
 
+ReactDOM.render(<FunderDetail />, document.getElementById('funderDetail'));
+ReactDOM.render(<FunderView />, document.getElementById("funderView"));
+ReactDOM.render(<GuestView />, document.getElementById("guestView"));
 ReactDOM.render(<ListDetail />, document.getElementById("listDetail"));
+ReactDOM.render(<ListItem />, document.getElementById('listItem'));
+ReactDOM.render(<ListView />, document.getElementById("listView"));
+ReactDOM.render(<RegisterForm />, document.getElementById("registerForm"));
 
