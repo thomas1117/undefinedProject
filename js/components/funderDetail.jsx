@@ -7,14 +7,14 @@ var FunderDetail = React.createClass({
 		return(	
 			<div>
 				<ul>
-					<li>{this.props.picture}picture</li>
-					<li>{this.props.detail}title</li>
-					<li>{this.props.amount}amount</li>
-					<li>{this.props.url}url</li>
-					<li><input type={this.props.FundAmount}FundAmount /></li>
-					<li><button>{this.props.submit}submit</button></li>
-					<li className="progressBar"> progress</li>
-					<li>{this.props.message} to go til goal</li>
+					<li><img /> picture</li>
+					<li>title</li>
+					<li>amount</li>
+					<li>url</li>
+					<label><input /></label>
+					<li><button>submit</button></li>
+					<li> <div>progress</div></li>
+					<li> to go til goal</li>
 						
 				</ul>
 			</div>
