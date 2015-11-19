@@ -1,29 +1,42 @@
+
+
+
 var React = require('react');
 var ReactDOM = require('react-dom');
+
+
+
+
+
 
 var ListItem = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<form>
-				<span>Add Item</span>
-					<label>Title</label>
-					<input type="text"/>
+				<form className="addItemForm">
 
-					<label>Amount</label>
-					<input type="text"/>
+					<span className="addSpan">Add Item</span>
 
-					<label>Url</label>
-					<input type="text"/>
+					<div className="addItemContainer">
+						<label>Picture</label>
+						<input type="text"/>  <br/>
 
-					<label>Picture</label>
-					<input type="text"/>
+						<label>Title</label>
+						<input id="title" type="text"/> <br/>
 
-					<span>Visibility</span>
-					<label> Yes</label>
-					<input type="radio" />
-					<label> No</label>
-					<input type="radio" />
+						<label id="amount">Amount</label>
+						<input type="text"/> <br/>
+
+						<label>Url</label>
+						<input type="text"/> <br/>
+
+						<span>Visibility</span>
+
+						<label> Yes</label>
+						<input type="radio" />
+						<label> No</label>
+						<input type="radio" />
+					</div>
 				</form>
 			</div>
 

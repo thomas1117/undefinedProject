@@ -1,4 +1,4 @@
-require("../css/main.css");
+require("../css/listItem.css");
 require("../css/normalize.css");
 
 var React = require('react');
@@ -12,5 +12,5 @@ ReactDOM.render(<ListItem />, document.getElementById('listItem'));
 
 
 // $(document).ready(function(){
-//  var Router = require('./router.jsx');
+// var Router = require('./router.jsx');
 // });
