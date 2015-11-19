@@ -51,6 +51,10 @@ var RegisterForm = React.createClass({
 							    
 							</select> 
 						</div>
+						<label>User Name:</label>
+						<input id="userNameForm"/>
+						<label>Password:</label>
+						<input id="passwordForm"/>
 						<button id="submitReg">Submit</button>
 					</form>
 				</div>
@@ -59,3 +63,44 @@ var RegisterForm = React.createClass({
 })
 
 module.exports = RegisterForm;
+
+////Backbone
+
+var User = Backbone.Model.extend({
+		initialize: function() {
+			console.log("a new detfund has been created");
+		}
+		
+});
+
+var UserInput = Backbone.Collection.extend({
+
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
+});
+
+var userReg= new User();
+
+userReg.set ({
+	username:'test',
+	email:'test@gmail.com',
+	password:'test',
+})
+
+
+console.log(userReg);
+
+
+userReg.save(null,{
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
+	success:function(resp) {
+		console.log(resp);
+	},
+	error:function(err) {
+		console.log(err);
+	}
+});
+
+
+
+
+
