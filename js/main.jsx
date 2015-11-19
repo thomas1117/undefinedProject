@@ -5,8 +5,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 /*var FunderDetail = require('./components/funderDetail.jsx');*/
 var ListItem = require('./components/listitem.jsx');
+var FunderDetail = require('./components/funderDetail.jsx');
 
-/*ReactDOM.render(<FunderDetail />, document.getElementById('funderDetail'));*/
+ReactDOM.render(<FunderDetail />, document.getElementById('funderDetail'));
 ReactDOM.render(<ListItem />, document.getElementById('listItem'));
 
 
