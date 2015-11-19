@@ -1,19 +1,25 @@
 require("../css/main.css");
+require("../css/normalize.css");
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Test = React.createClass({
-	render:function() {
-		return(<h1>test</h1>)
-	}
-})
+var ListView = require("./components/listView.jsx");
 
-ReactDOM.render(<Test />, document.getElementById('container'));
+ReactDOM.render(<ListView />, document.getElementById("listView"));
 
 
+var GuestView = require("./components/guestView.jsx");
+
+ReactDOM.render(<GuestView />, document.getElementById("guestView"));
 
 
-// $(document).ready(function(){
-//  var Router = require('./router.jsx');
-// });
+var FunderView = require("./components/funderView.jsx");
+
+ReactDOM.render(<FunderView />, document.getElementById("funderView"));
+
+
+var ListDetail = require("./components/listDetail.jsx");
+
+ReactDOM.render(<ListDetail />, document.getElementById("listDetail"));
+
