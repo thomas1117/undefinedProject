@@ -9,14 +9,14 @@ var ListView = require("./components/listView.jsx");
 ReactDOM.render(<ListView />, document.getElementById("listView"));
 
 
-// var GuestView = require("./components/guestView.jsx");
+var GuestView = require("./components/guestView.jsx");
 
-// ReactDOM.render(<GuestView />, document.getElementById("guestView"));
+ReactDOM.render(<GuestView />, document.getElementById("guestView"));
 
 
-// var FunderView = require("./components/funderView.jsx");
+var FunderView = require("./components/funderView.jsx");
 
-// ReactDOM.render(<FunderView />, document.getElementById("funderView"));
+ReactDOM.render(<FunderView />, document.getElementById("funderView"));
 
 
 var ListDetail = require("./components/listDetail.jsx");

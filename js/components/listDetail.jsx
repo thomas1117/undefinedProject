@@ -7,7 +7,8 @@ var ListDetail = React.createClass({
 			
 			<div>
 				<div id="listDetailHeader">
-					<h1>XXXXXXX List</h1>
+					<h1>List Detail View</h1>
+					<h2>XXXXXXX List</h2>
 					<p>URL</p>
 					<button id="editListButton">Edit List</button>
 				</div>

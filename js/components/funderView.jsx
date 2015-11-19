@@ -7,7 +7,8 @@ var FunderView = React.createClass({
 			
 			<div>
 				<div id="funderViewHeader">
-					<h1>Available Items for Pledges</h1>
+					<h1>Funder View</h1>
+					<h2>Available Items for Pledges</h2>
 				</div>
 
 				<div id="funderViewLists">
