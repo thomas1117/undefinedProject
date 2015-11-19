@@ -1,4 +1,4 @@
-var React = require('react'); 
+/*var React = require('react'); 
 var ReactDOM = require('react-dom');
 
 var FunderDetail = React.createClass({
@@ -24,4 +24,4 @@ var FunderDetail = React.createClass({
 
 
 
-module.exports = FunderDetail; 
+module.exports = FunderDetail; */
