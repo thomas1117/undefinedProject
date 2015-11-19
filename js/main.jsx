@@ -1,4 +1,6 @@
 require("../css/main.css");
+require("../css/loginRegister.css");
+require("../css/registerForm.css");
 require("../css/normalize.css");
 
 var React = require('react');

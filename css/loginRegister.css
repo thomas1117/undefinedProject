@@ -1,0 +1,26 @@
+h1 {
+	color:blue;
+}
+
+input {
+	display: block;
+}
+
+button {
+	display: block;
+}
+
+#login {
+	float: left;
+	width:250px;
+}
+
+#register {
+	float: left;
+	clear: right;
+}
+
+#registerForm {
+	display: block;
+	position: relative;
+}
