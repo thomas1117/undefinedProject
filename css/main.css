@@ -12,6 +12,7 @@ button {
 
 #login {
 	float: left;
+	width:250px;
 }
 
 #register {
