@@ -4,6 +4,16 @@ var ReactDOM = require('react-dom');
 var RegisterForm = React.createClass({
 	_submit: function(e) {
 		e.preventDefault;
+		model.save(null,{
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
+	success:function(resp) {
+		console.log(resp);
+	},
+	error:function(err) {
+		console.log(err);
+	}
+
+});
 		
 	},
 	render: function(){
@@ -17,6 +27,7 @@ var RegisterForm = React.createClass({
 						<input id="fName" placeholder="First Name"/>
 						<input id="lName" placeholder="Last Name"/>
 						<input id="emailForm" placeholder="email"/>
+						<input id="userNameForm" placeholder="Username"/>
 						<input id="passwordForm" placeholder="password"/>
 						<button id="submitReg" type="submit">Submit</button>
 					</div>
@@ -50,16 +61,7 @@ var UserInput = Backbone.Collection.extend({
 	password:$("#passwordForm").val(),
 });
 
-model.save(null,{
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
-	success:function(resp) {
-		console.log(resp);
-	},
-	error:function(err) {
-		console.log(err);
-	}
 
-});
 
 
 

@@ -5,7 +5,7 @@
 	border-radius:5px;
 }
 input {
-	width:230px;
+	width:242px;
 	height:30px;
 	border-radius:5px;
 	outline:none;
@@ -13,6 +13,7 @@ input {
 	margin:auto;
 	margin:15px 0 15px;
 	border:1px solid #F7F7F7;
+	padding-left:8px;
 }
 
 h2 {
@@ -47,5 +48,6 @@ h2 {
 
 #inputDiv {
 	margin:auto;
-	width:230px;
+	width:242px;
+
 }
