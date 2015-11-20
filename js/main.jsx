@@ -1,8 +1,11 @@
-require("../css/listItem.css");
+require("../css/main.css");
 require("../css/normalize.css");
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Router = require('react-router');
+var routes = require('../routes');
+/*We can remove all of the below once we run React-Router*/
 var FunderDetail = require('./components/funderDetail.jsx');
 var FunderView = require("./components/funderView.jsx");
 var GuestView = require("./components/guestView.jsx");
@@ -20,6 +23,10 @@ ReactDOM.render(<ListItem />, document.getElementById('listItem'));
 ReactDOM.render(<ListView />, document.getElementById("listView"));
 ReactDOM.render(<RegisterForm />, document.getElementById("registerForm"));
 ReactDOM.render(<LoginRegister/>, document.getElementById("loginRegister"));
+
+Router.run(routes, function(Handler) {
+	React.render(<Handler/>, document.getElementById("container"));
+});
 
 
 

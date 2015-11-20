@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Backbone = require('Backbone');
 
 var GuestView = React.createClass({
 	render: function () {
@@ -27,29 +28,23 @@ var GuestView = React.createClass({
 
 
 
-// module.exports = GuestView;
+module.exports = GuestView;
 
-// var DetFundView = Backbone.Model.extend({
-// 		initialize: function() {
-// 			console.log("a new detfund has been created");
-// 		}
+var Guest_View = Backbone.Model.extend({
+		initialize: function() {
+			console.log("a new detfund has been created");
+		}
 		
-// });
-// var FundView = Backbone.Collection.extend({
-// 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
-// });
-// var fundView = new FundView();
-// fundView.fetch({
-// 	success: function(resp) {
-// 		console.log(resp.toJSON());
-// 	},
-// 	error: function(error) {
-// 		console.log(err);
-// 	}
-// });
-// var test = new FundView();
-// test.set({
-// 	'title': 'test',
-// 	'user': 2,
-	
-// });
+});
+var TheGuestView = Backbone.Collection.extend({
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
+});
+var theGuestView = new TheGuestView();
+theGuestView.fetch({
+	success: function(resp) {
+		console.log(resp.toJSON());
+	},
+	error: function(error) {
+		console.log(err);
+	}
+});

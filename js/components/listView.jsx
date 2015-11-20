@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Backbone = require('Backbone');
 
 var ListView = React.createClass({
 	render: function () {
@@ -53,17 +54,11 @@ var TheListerView = Backbone.Collection.extend({
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
 });
 var theListerView = new TheListerView();
-ftheListerView.fetch({
+theListerView.fetch({
 	success: function(resp) {
 		console.log(resp.toJSON());
 	},
 	error: function(error) {
 		console.log(err);
 	}
-});
-var test = new TheListerView();
-test.set({
-	'title': 'test',
-	'user': 2,
-	
 });
