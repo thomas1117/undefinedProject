@@ -1,34 +1,50 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Backbone = require('backbone');
 
 var ListItem = React.createClass({
+		_submit: function(e) {
+		var model= new User();
+		model.set ({
+		title:$("#titleAdd").val(),
+		price:$("#priceAdd").val(),
+		url:$("#urlAdd").val(),
+		image:$("#imgAdd").val(),
+		description:$("#descriptionAdd").val()
+		});
+		e.preventDefault();
+
+		model.save(null,{
+		url: "https://afternoon-scrubland-9189.herokuapp.com/api/items/",
+		success:function(resp) {
+			console.log(resp);
+		},
+		error:function(err) {
+			console.log(err);
+		}
+
+	});
+			
+		},
 	render: function() {
 		return (
-			<div>
-				<form className="addItemForm">
-
-					<span className="addSpan">Add Item</span>
-
-					<div className="addItemContainer">
-						<label>Picture</label>
-						<input type="text"/>  <br/>
-
-						<label>Title</label>
-						<input id="title" type="text"/> <br/>
-
-						<label id="amount">Amount</label>
-						<input type="text"/> <br/>
-
-						<label>Url</label>
-						<input type="text"/> <br/>
-
-						<span>Visibility</span>
-
-						<label> Yes</label>
-						<input type="radio" />
-						<label> No</label>
-						<input type="radio" />
+			<div id="addDiv">
+				<form className="addItemForm" onSubmit={this._submit}>
+					<div id="addHeader">
+					<h2>Add Item</h2>
 					</div>
+					<div id="inputAddDiv">
+					<input id="titleAdd" placeholder="title"/><br />
+					<input id="priceAdd" placeholder="price"/><br />
+					<input id="urlAdd" placeholder="link"/><br />
+					<input id="imgAdd" placeholder="Img Url"/><br/>
+					<input id="descriptionAdd" placeholder="description"/>
+					</div>
+					<button id="addSubmit">Submit</button>
+					
+						
+				
+					
 				</form>
 			</div>
 
@@ -38,3 +54,17 @@ var ListItem = React.createClass({
 });
 
 module.exports = ListItem;
+
+//Backbone
+
+var User = Backbone.Model.extend({
+		initialize: function() {
+			console.log("a new detfund has been created");
+		}
+		
+});
+
+var UserInput = Backbone.Collection.extend({
+
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
+});
