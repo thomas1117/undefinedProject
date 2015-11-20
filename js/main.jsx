@@ -15,7 +15,7 @@ var FunderView = require("./components/funderView.jsx");
 // var LoginRegister = require("./components/loginRegister.jsx");
 
 // ReactDOM.render(<FunderDetail />, document.getElementById('funderDetail'));
-ReactDOM.render(<FunderView />, document.getElementById("funderView"));
+
 // ReactDOM.render(<GuestView />, document.getElementById("guestView"));
 // ReactDOM.render(<ListDetail />, document.getElementById("listDetail"));
 // ReactDOM.render(<ListItem />, document.getElementById('listItem'));

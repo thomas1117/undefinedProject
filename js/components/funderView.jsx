@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Bacbone = require('backbone');
+var Backbone = require('backbone');
+require('../../css/funderView.css')
 
 
 var FundView = Backbone.Model.extend({
@@ -17,28 +18,30 @@ var theFundView = new TheFundView();
 theFundView.fetch({
     success: function(resp) {
         var test =resp.toJSON();
-     	console.log(test[0])
+     	
         var mapped=test[0].results.map(function(obj){
         	return {
         		'item_set':obj.item_set
         	}
         });
 
-        console.log(mapped);
-       
-       var mappedAgain=mapped[0].item_set.map(function(obj){
+     	var namePriceImage=mapped[0].item_set.map(function(obj){
        	return {
-       		'description':obj.description
+       		'name':obj.name,
+       		'image':obj.image,
+       		'price':obj.price
        	}
        })
+     	console.log(namePriceImage);
 
-       console.log(mappedAgain);
-       
-        
+
+     	
     
-         
-       
+     	
+       ReactDOM.render(<FunderView data={namePriceImage}/>, document.getElementById("funderView"));
+     
     },
+
     error: function(error) {
         console.log(error);
     }
@@ -50,18 +53,24 @@ theFundView.fetch({
 
 
 var FunderView = React.createClass({
+
 	render: function () {
+	var here = this.props.data.map(function(obj) {
+		console.log(obj);
 		return(
 			
-			   <div>
-                <img src="http://placehold.it/250x250"/>
-               	<h3>Title</h3>
-                <span id="price">price</span>
+			   <div id="funderDiv">
+                <img id="funderImg" src={obj.image}/>
+               	<span>{obj.name}</span>
+                <span id="price">{obj.price}</span>
 				</div>
-			)
-		}
-	
+				)
+		});
+		return(<div>{here}</div>);
+}	
 });
+
+
 
 module.exports = FunderView;
 
