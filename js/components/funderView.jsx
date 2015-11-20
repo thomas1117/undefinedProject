@@ -17,14 +17,27 @@ var theFundView = new TheFundView();
 theFundView.fetch({
     success: function(resp) {
         var test =resp.toJSON();
-        console.log(test[0]);
+     	console.log(test[0])
         var mapped=test[0].results.map(function(obj){
         	return {
-        		'price':obj.price
-        }
-    })
-        console.log(mapped);
+        		'item_set':obj.item_set
+        	}
+        });
 
+        console.log(mapped);
+       
+       var mappedAgain=mapped[0].item_set.map(function(obj){
+       	return {
+       		'description':obj.description
+       	}
+       })
+
+       console.log(mappedAgain);
+       
+        
+    
+         
+       
     },
     error: function(error) {
         console.log(error);
