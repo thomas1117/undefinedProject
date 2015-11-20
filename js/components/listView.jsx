@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('Backbone');
-require("/css/views.css");
+// require("../css/views.css");
 
 var ListView = React.createClass({
 	render: function () {

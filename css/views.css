@@ -1,6 +1,6 @@
 /*1. Common CSS for all Views*/
 
-body { background-color: yellow; margin: 0 auto; width: 1000px; max-height: 1000px; overflow: auto; font-family: "Arial", "sans-serif"; color: blue;}
+body { margin: 0 auto; width: 1000px; max-height: 1000px; overflow: auto; font-family: "Arial", "sans-serif"; color: blue;}
 
 h1 { color: red; font-weight: bold; font-family: "Arial", "sans-serif";}
 
