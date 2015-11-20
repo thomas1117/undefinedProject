@@ -8,9 +8,11 @@ var RegisterForm = React.createClass({
 	username:$("#userNameForm").val(),
 	email:$("#emailForm").val(),
 	password:$("#passwordForm").val(),
-});
-		e.preventDefault();
-		model.save(null,{
+	});
+	
+	e.preventDefault();
+
+	model.save(null,{
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
 	success:function(resp) {
 		console.log(resp);
