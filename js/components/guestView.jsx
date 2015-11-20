@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var Backbone = require('Backbone');
 // require("../css/views.css");
 
+
 var GuestView = React.createClass({
 	render: function () {
 		return(
@@ -49,3 +50,8 @@ theGuestView.fetch({
 		console.log(err);
 	}
 });
+
+
+
+module.exports = GuestView;
+

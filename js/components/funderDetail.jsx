@@ -1,5 +1,6 @@
 var React = require('react'); 
 var ReactDOM = require('react-dom');
+
 var FunderDetail = React.createClass({
 	render: function () {
 	
@@ -20,4 +21,6 @@ var FunderDetail = React.createClass({
 			)
 		}
 });
+
+
 module.exports = FunderDetail; 
