@@ -20,8 +20,8 @@ var LoginRegister = require("./components/loginRegister.jsx");
 // ReactDOM.render(<ListDetail />, document.getElementById("listDetail"));
 // ReactDOM.render(<ListItem />, document.getElementById('listItem'));
 // ReactDOM.render(<ListView />, document.getElementById("listView"));
-// ReactDOM.render(<RegisterForm />, document.getElementById("registerForm"));
- ReactDOM.render(<LoginRegister/>, document.getElementById("loginRegister"));
+ReactDOM.render(<RegisterForm />, document.getElementById("registerForm"));
+ // ReactDOM.render(<LoginRegister/>, document.getElementById("loginRegister"));
 
 
 

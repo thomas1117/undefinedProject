@@ -3,7 +3,13 @@ var ReactDOM = require('react-dom');
 
 var RegisterForm = React.createClass({
 	_submit: function(e) {
-		e.preventDefault;
+		var model= new User();
+	model.set ({
+	username:$("#userNameForm").val(),
+	email:$("#emailForm").val(),
+	password:$("#passwordForm").val(),
+});
+		e.preventDefault();
 		model.save(null,{
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
 	success:function(resp) {
@@ -54,13 +60,7 @@ var UserInput = Backbone.Collection.extend({
 });
 
 
-	var model= new User();
-	model.set ({
-	username:$("#userNameForm").val(),
-	email:$("#emailForm").val(),
-	password:$("#passwordForm").val(),
-});
-
+	
 
 
 
