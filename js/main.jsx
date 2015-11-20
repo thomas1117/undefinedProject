@@ -4,8 +4,8 @@ require("../css/normalize.css");
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router');
-var routes = require('../routes');
-/*We can remove all of the below once we run React-Router*/
+var routes = require('/routes');
+/*We can remove all of these below once we run React-Router*/
 var FunderDetail = require('./components/funderDetail.jsx');
 var FunderView = require("./components/funderView.jsx");
 var GuestView = require("./components/guestView.jsx");

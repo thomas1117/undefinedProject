@@ -1,0 +1,70 @@
+/*1. Common CSS for all Views*/
+
+body { background-color: yellow; margin: 0 auto; width: 1000px; max-height: 1000px; overflow: auto; font-family: "Arial", "sans-serif"; color: blue;}
+
+h1 { color: red; font-weight: bold; font-family: "Arial", "sans-serif";}
+
+h2 { color: green; font-weight: bold; font-family: "Arial", "sans-serif";}
+
+ul, li, li a { list-style-type: none; text-decoration: none;}
+
+
+
+/*2. CSS for listview*/
+
+#listMakerHeader {
+
+}					
+#myLists {
+
+}
+.myListLi {
+
+}
+#addListButton {
+
+}
+#myPledgesHeader {
+
+}
+#myPledgesUL {
+
+}
+.myPledgesLi {
+
+}
+#totalPledges {
+
+}
+.totalPledgesP {
+
+}
+.totalPledgesSp {
+}
+	
+/*3. CSS for guestview*/
+
+#GuestViewHeader {
+
+}
+#guestViewLists {
+
+}
+.guestListLi  {
+
+}
+#signUpButton {
+
+}
+/*4. CSS for funderview*/
+
+#funderViewHeader {
+
+}
+#funderViewLists {
+
+}
+.funderListLi {
+
+}
+
