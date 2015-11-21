@@ -6,9 +6,10 @@ var ListItem = React.createClass({
 		_submit: function(e) {
 		var model= new User();
 		model.set ({
-		title:$("#titleAdd").val(),
+		name:$("#titleAdd").val(),
 		price:$("#priceAdd").val(),
-		url:$("#urlAdd").val(),
+		item_link:$("#urlAdd").val(),
+		list:'1',
 		image:$("#imgAdd").val(),
 		description:$("#descriptionAdd").val()
 		});
