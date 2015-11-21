@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Backbone = require('Backbone');
 
 var RegisterForm = React.createClass({
 	_submit: function(e) {

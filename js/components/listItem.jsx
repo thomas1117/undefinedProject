@@ -24,8 +24,12 @@ var ListItem = React.createClass({
 			console.log(err);
 		}
 
-	});
-			
+});
+		$("#titleAdd").val('');
+		$("#priceAdd").val('');	
+		$("#urlAdd").val('');	
+		$("#imgAdd").val('');
+		$("#descriptionAdd").val('');	
 		},
 	render: function() {
 		return (
