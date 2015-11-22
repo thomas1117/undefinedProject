@@ -9,3 +9,11 @@ h1 {
 #guestViewHeader {
 	display: none;
 }
+
+#fullListPage {
+	display: none;
+}
+
+/*#listDetail {
+	display: none;
+}*/

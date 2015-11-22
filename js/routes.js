@@ -11,7 +11,7 @@ var Routes = (
 	<Route name = "guestView" handler={require(".components/guestView")} />
 	<Route name = "listDetail" handler={require(".components/listDetail")} />
 	<Route name = "listItem" handler={require(".components/listItem")} />
-	<Route name = "listView" handler={require(".components/listView")} />
+	<Route name = "fullListPage" handler={require(".components/listView")} />
 	<Route name = "loginRegister" handler={require(".components/loginRegister")} />
 	<Route name = "registerForm" handler={require(".components/registerForm")} />
 </Route>

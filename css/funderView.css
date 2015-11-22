@@ -154,3 +154,114 @@ h3 {
 	clear:both;
 }
 
+/*CSS For LISTDETAILVIEW*/
+
+/*#listTitle {
+	color: #0489D6;
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+#deadline {
+	color: #0489D6;
+	font-size: 18px;
+	float: right;
+	margin-right: 20px;
+}
+
+#addListButDiv {
+	display: block;
+	clear: both;
+}*/
+
+#listDetailHead {
+	display: inline-block;
+	width: 1000px;
+	height: 20px;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+#listDetailHead h3 {
+	margin-left: 10px;
+	border-bottom: 2px solid #0489D6;
+	color: #0489D6;
+}
+
+/*#listDetailList h4 {
+	margin-left: 10px;
+	color: #0489D6;
+	width: 1000px;
+	height: 10px;
+	display: inline-block;
+}*/
+
+#listDetailHeader {
+	display: inline-block;
+	width: 1000px;
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+	height: 50px;
+	background-color: yellow;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+//////////
+
+#listsDiv {
+	width:255px;
+	margin-top: 50px;
+	float: left;
+	margin-right: 40px;
+}
+
+#listsPrice {
+	float: right;
+	color: #0489D6;
+}
+
+#listsPrice::before {
+	content: "$";
+}
+
+#listsName {
+	color: #0489D6;
+}
+
+#listsTitle {
+	color: #0489D6;
+}
+
+#listsImg {
+	width:250px;
+	height:250px;
+	border: 2px solid #0489D6;
+}
+
+#listsUl {
+	float: left;
+}
+
+#listsLi {
+	float: left;
+	list-style-type: none;
+	display: inline-block;
+}
+
+#listsViewHeader {
+	width: 1000px;
+	height: 30px;
+	background-color: #F6F6F6;
+	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	clear:both;
+}
+
+
+
+
+

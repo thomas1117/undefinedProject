@@ -1,108 +1,67 @@
-// var React = require('react');
-// var ReactDOM = require('react-dom');
-// var Backbone = require('backbone');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Backbone = require('backbone');
+require('../../css/funderView.css');
+
+var listDetailView = Backbone.Model.extend({
+		initialize: function() {
+			console.log("a new detail list has been created");
+		}
+});
+
+var ListDetailView = Backbone.Collection.extend({
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
+});
+
+var myListDetailView = new ListDetailView();
+
+myListDetailView.fetch({
+	success: function(resp) {
+		var test = resp.toJSON();
+		var mapped=test[0].results.map(function(obj){
+			return {
+				'item_set': obj.item_set
+			}
+		});
+		var pageData=mapped[0].item_set.map(function(obj){
+			return {
+				'title': obj.title,
+				'name': obj.name,
+				'price': obj.price,
+				'image': obj.image				
+			}
+		})
+		console.log(pageData);
+		ReactDOM.render(<listDetailView data={mapped[0]}/>, document.getElementById('listDetail'));
+	},
+	error: function(error) {
+		console.log(error);
+	}
+});
+
+var theListDetailView = React.createClass({
+	render: function () {
+		var here=this.props.data.map(function(obj) {
+			console.log(obj);
+			return (
+              <div id="listsDiv">
+	              <ul id="listsUl">
+		              <li id="listsLi">
+		                 <img id="listsImg" src={this.props.data.image}/>
+						 <span id="listsTitle">{this.props.data.title}</span>
+		                 <span id="listsName">{this.props.data.name}</span>
+		                 <span id="listsPrice">{this.props.data.price}</span>
+		              </li>
+	              </ul>
+              </div>
+             )
+		});
+        return(<div>{here}</div>);		
+	}
+});
 
 
-// var ListDetail = React.createClass({
-// 	render: function () {
-// 		return(
-			
-// 			<div>
-// 				<div id="listDetailHeader">
-// 					<h1>List Detail View</h1>
-// 					<h2>XXXXXXX List</h2>
-// 					<p>URL</p>
-// 					<button id="editListButton">Edit List</button>
-// 				</div>
-
-// 				<div id="listDetailList">
-// 					<ul>
-// 					 	<li className="listDetailLi"></li>
-// 					</ul>
-// 				</div>
-
-// 				<div id="addListView">
-// 					<button id="addListDetailButton">Add Item</button>
-// 				</div>
-
-// 			</div>
-// 		)
-// 	}
-// });
-
-
-// module.exports = ListDetail;
-
-
-// var DetFundView = Backbone.Model.extend({
-// 		initialize: function() {
-// 			console.log("a new detfund has been created");
-// 		}
-		
-// });
-// <<<<<<< HEAD
-// var FundView = Backbone.Collection.extend({
-// 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
-// });
-// var fundView = new FundView();
-// =======
-
-// var FundView = Backbone.Collection.extend({
-
-// 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
-// });
-
-// var fundView = new FundView();
-
-// >>>>>>> 18d4d0ec3cb443d4d8fc5b464d0d762d695e74d1
-// fundView.fetch({
-// 	success: function(resp) {
-// 		console.log(resp.toJSON());
-// 	},
-// 	error: function(error) {
-// <<<<<<< HEAD
-// 		console.log(err);
-// 	}
-// });
-// var test = new FundView();
-// =======
-// 		console.log(error);
-// 	}
-// });
-
-// var test = new FundView();
-
-// >>>>>>> 18d4d0ec3cb443d4d8fc5b464d0d762d695e74d1
-// test.set({
-// 	'title': 'test',
-// 	'user': 2,
-	
-// <<<<<<< HEAD
-// });
-// =======
-// });
+module.exports = listDetailView;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// >>>>>>> 18d4d0ec3cb443d4d8fc5b464d0d762d695e74d1
