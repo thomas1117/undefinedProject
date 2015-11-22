@@ -49,26 +49,25 @@ theFundView.fetch({
 });
 
 
-
-
-
-
 var FunderView = React.createClass({
 
-	render: function () {
-	var here = this.props.data.map(function(obj) {
-		console.log(obj);
-		return(
-			
-			   <div id="funderDiv">
-                <img id="funderImg" src={obj.image}/>
-               	<span>{obj.name}</span>
-                <span id="price">{obj.price}</span>
-				</div>
-				)
-		});
-		return(<div id="container">{here}</div>);
-}	
+   render: function () {
+       var here = this.props.data.map(function(obj) {
+          
+           return(           
+            <div id="funderDiv">
+            <ul id="funderUl">
+            <li id="funderLi">
+               <img id="funderImg" src={obj.image}/>
+               <span id="funderName">{obj.name}</span>
+               <span id="funderPrice">{obj.price}</span>
+            </li>
+            </ul>
+            </div>
+            )
+       });
+       return(<div>{here}</div>);
+   }   
 });
 
 

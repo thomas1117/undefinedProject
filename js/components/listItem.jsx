@@ -46,25 +46,15 @@ var ListItem = React.createClass({
 					<input id="descriptionAdd" placeholder="description"/>
 					</div>
 					<button id="addSubmit">Submit</button>
-					
-						
-				
-					
 				</form>
 			</div>
->>>>>>> master
 
-// var UserInput = Backbone.Collection.extend({
 
-<<<<<<< HEAD
-// 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
-// });
-=======
+
 });
 
 module.exports = ListItem;
 
-//Backbone
 
 var User = Backbone.Model.extend({
 		initialize: function() {
@@ -77,4 +67,4 @@ var UserInput = Backbone.Collection.extend({
 
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
 });
->>>>>>> master
+

@@ -3,15 +3,15 @@ h1 {
 }
 
 #funderViewHeader {
-	display: none;
+	display: block;
 }
 
 #guestViewHeader {
-	display: none;
+	display: block;
 }
 
 #fullListPage {
-	display: none;
+	display: block;
 }
 
 /*#listDetail {

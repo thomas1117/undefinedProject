@@ -28,7 +28,6 @@ h3 {
 
 #funderImg {
 	width:250px;
-<<<<<<< HEAD
 	height:250px;
 	border: 2px solid #0489D6;
 }
@@ -79,20 +78,13 @@ h3 {
 #deadline {
 	color: #0489D6;
 	font-size: 18px;
-=======
+
 	float: left;
 	margin:10px;
 	border:1px solid #F7f7f7;
 }
 
-#price:before {
-	content: "$"
-}
-#price {
->>>>>>> master
-	float: right;
-	margin-right: 20px;
-}
+
 
 #addListButDiv {
 	display: block;
@@ -143,7 +135,6 @@ h3 {
 #guestImg {
 	width:250px;
 	height:250px;
-<<<<<<< HEAD
 	border: 2px solid #0489D6;
 }
 
@@ -222,7 +213,7 @@ h3 {
 	margin-left: 10px;
 }
 
-//////////
+
 
 #listsDiv {
 	width:255px;
@@ -278,11 +269,10 @@ h3 {
 
 
 
-=======
 
-}
+
 
 #container {
 	width:900px
 }
->>>>>>> master
+
