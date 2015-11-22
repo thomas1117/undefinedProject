@@ -1,8 +1,13 @@
 #funderDiv {
 	width:250px;
+	float: left;
+	margin:10px;
+	border:1px solid #F7f7f7;
 }
 
-
+#price:before {
+	content: "$"
+}
 #price {
 	float: right;
 }
@@ -10,4 +15,9 @@
 #funderImg {
 	width:250px;
 	height:250px;
+
+}
+
+#container {
+	width:900px
 }

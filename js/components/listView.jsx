@@ -1,8 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
+var LoginRegister = require("./loginRegister.jsx");
 var ListView = React.createClass({
+
 	render: function () {
+		
 		return(
 			
 			<div>

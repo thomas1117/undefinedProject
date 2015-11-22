@@ -24,9 +24,10 @@ theFundView.fetch({
         		'item_set':obj.item_set
         	}
         });
-
+        console.log(mapped)
      	var namePriceImage=mapped[0].item_set.map(function(obj){
        	return {
+          'id':obj.id,
        		'name':obj.name,
        		'image':obj.image,
        		'price':obj.price
@@ -34,7 +35,7 @@ theFundView.fetch({
        })
      	console.log(namePriceImage);
 
-
+      
      	
     
      	
@@ -66,7 +67,7 @@ var FunderView = React.createClass({
 				</div>
 				)
 		});
-		return(<div>{here}</div>);
+		return(<div id="container">{here}</div>);
 }	
 });
 

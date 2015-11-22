@@ -1,12 +1,21 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
+var ListView = require("./listView.jsx");
+
 
 $.ajaxSetup({
     beforeSend: function(xhr) {
         xhr.setRequestHeader('authorization','token' );
     }
 });
+
+function toObject(arr){
+	var rv = {};
+	for (var i = 0; i < arr.length; ++i)
+	rv[i] = arr[i];
+	return rv;					
+			}
 
 var LoginRegister = React.createClass({
 	_submit: function(e) {
@@ -45,11 +54,18 @@ var LoginRegister = React.createClass({
 					console.log(test.results);
 					var mapped=test.results[0].item_set.map(function(obj){
 						return {
-							'image':obj.image
+							'name':obj.name,
+							'price':obj.price,
+							'image':obj.image,
+							'description':obj.description,
+							'item_link':obj.item_link
 						}
 
 					})
-					console.log(mapped);
+					mappedTest = toObject(mapped);
+				ReactDOM.render(<ListView data={mappedTest}/>, document.getElementById("listView"));
+					
+						
 				}
 
 			})
