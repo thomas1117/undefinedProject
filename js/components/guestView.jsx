@@ -1,57 +1,71 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Backbone = require('Backbone');
-// require("../css/views.css");
+var Backbone = require('backbone');
+require('../../css/funderView.css')
 
 
-var GuestView = React.createClass({
-	render: function () {
-		return(
-			
-			<div>
-				<div id="GuestViewHeader">
-					<h1>Guest View</h1>
-				</div>
-
-				<div id="guestViewLists">
-					<h2>List for XXXXXXXX</h2>
-					<ul>
-					 	<li className="guestListLi"></li>
-					</ul>
-					<p>If you would like to make a pledge, please sign up for a free account:</p>
-					<button id="signUpButton">Sign Up</button>
-				</div>
-
-			</div>
-			)
-		}
-	
-});
-
-
-
-module.exports = GuestView;
-
-var Guest_View = Backbone.Model.extend({
-		initialize: function() {
-			console.log("a new detfund has been created");
-		}
-		
-});
-var TheGuestView = Backbone.Collection.extend({
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
-});
-var theGuestView = new TheGuestView();
-theGuestView.fetch({
-	success: function(resp) {
-		console.log(resp.toJSON());
-	},
-	error: function(error) {
-		console.log(err);
+var GuestView = Backbone.Model.extend({
+	initialize: function() {
+		console.log("a new guest view has been created");
 	}
 });
 
+var TheGuestView = Backbone.Collection.extend({
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
+});
 
+var theGuestView = new TheGuestView();
+
+theGuestView.fetch({
+    success: function(resp) {
+        var test =resp.toJSON();
+        
+        var mapped=test[0].results.map(function(obj){
+            return {
+                'item_set':obj.item_set
+            }
+        });
+
+        var namePriceImage=mapped[0].item_set.map(function(obj){
+        return {
+            'name':obj.name,
+            'image':obj.image,
+            'price':obj.price
+        }
+       })
+        console.log(namePriceImage);
+        
+       ReactDOM.render(<GuestView data={namePriceImage}/>, document.getElementById("guestView"));
+     
+    },
+
+    error: function(error) {
+        console.log(error);
+    }
+});
+
+
+
+var GuestView = React.createClass({
+	render: function() {
+    var here = this.props.data.map(function(obj) {
+        console.log(obj);
+        return(
+			<div id="guestDiv">
+				<ul id="guestUl">
+					<li id="guestLi">
+					 	<img id="guestImg" src={obj.image}/>
+                		<span id="guestName">{obj.name}</span>
+                		<span id="guestPrice">{obj.price}</span>
+					 </li>
+				</ul>
+				</div>
+		)
+		});
+		return(<div>{here}</div>);
+   }   
+});
 
 module.exports = GuestView;
+
 

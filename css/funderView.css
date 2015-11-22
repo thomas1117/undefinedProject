@@ -1,13 +1,156 @@
-#funderDiv {
-	width:250px;
+/*CSS for all VIEWS*/
+
+h3 {
+	color: #0489D6;
 }
 
+/*CSS For FUNDERVIEW*/
 
-#price {
+#funderDiv {
+	width:255px;
+	margin-top: 50px;
+	float: left;
+	margin-right: 40px;
+}
+
+#funderPrice {
 	float: right;
+	color: #0489D6;
+}
+
+#funderPrice::before {
+	content: "$";
+}
+
+#funderName {
+	color: #0489D6;
 }
 
 #funderImg {
 	width:250px;
 	height:250px;
+	border: 2px solid #0489D6;
 }
+
+#funderUl {
+	float: left;
+}
+
+#funderLi {
+	float: left;
+	list-style-type: none;
+	display: inline-block;
+}
+
+#funderViewHeader {
+	width: 1000px;
+	height: 30px;
+	background-color: #F6F6F6;
+	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	clear:both;
+}
+
+
+/*CSS For LISTERVIEW*/
+
+#addListButton {
+	width:90px;
+	padding:10px;
+	border-radius:5px;
+	outline:none;
+	border:1px solid #F7F7F7;
+	background-color: #0489D6;
+	color:#fff;
+	font-size:11px;
+	float:right;
+	margin-right: 20px;
+	margin-top: 30px;
+}
+
+#listTitle {
+	color: #0489D6;
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+#deadline {
+	color: #0489D6;
+	font-size: 18px;
+	float: right;
+	margin-right: 20px;
+}
+
+#addListButDiv {
+	display: block;
+	clear: both;
+}
+
+#myListsHeader {
+	display: block;
+	width: 1000px;
+	height: 200px;
+	clear: both;
+}
+
+#myListsHeader h3 {
+	margin-left: 10px;
+	border-bottom: 2px solid #0489D6;
+}
+
+#myPledgesHeader {
+	display: block;
+	width: 1000px;
+	height: 200px;
+	clear: both;
+}
+
+/*CSS For GUESTVIEW*/
+
+#guestDiv {
+	width:255px;
+	margin-top: 50px;
+	float: left;
+	margin-right: 40px;
+}
+
+#guestPrice {
+	float: right;
+	color: #0489D6;
+}
+
+#guestPrice::before {
+	content: "$";
+}
+
+#guestName {
+	color: #0489D6;
+}
+
+#guestImg {
+	width:250px;
+	height:250px;
+	border: 2px solid #0489D6;
+}
+
+#guestUl {
+	float: left;
+}
+
+#guestLi {
+	float: left;
+	list-style-type: none;
+	display: inline-block;
+}
+
+#guestViewHeader {
+	width: 1000px;
+	height: 30px;
+	background-color: #F6F6F6;
+	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	clear:both;
+}
+

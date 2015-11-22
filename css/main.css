@@ -1,3 +1,11 @@
 h1 {
 	color:blue;
 }
+
+#funderViewHeader {
+	display: none;
+}
+
+#guestViewHeader {
+	display: none;
+}
