@@ -1,19 +1,25 @@
-h1 {
-	color:blue;
-}
 
-#funderViewHeader {
-	display: block;
-}
-
-#guestViewHeader {
-	display: block;
-}
-
-#fullListPage {
-	display: block;
-}
-
-/*#listDetail {
+#funderDetail {
 	display: none;
-}*/
+}
+#funderView {
+	display: none;
+}
+#guestView {
+	display: none;
+}
+#listDetail {
+	display: none;
+}
+#listItem {
+	display: none;
+}
+#listView {
+	display: none;
+}
+#registerForm  {
+	display: block;
+}
+#loginRegister {
+	display: block;
+}

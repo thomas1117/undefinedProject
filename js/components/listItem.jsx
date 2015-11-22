@@ -49,9 +49,10 @@ var ListItem = React.createClass({
 				</form>
 			</div>
 
+			)
 
-
-});
+		}
+	});
 
 module.exports = ListItem;
 

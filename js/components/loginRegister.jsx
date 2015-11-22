@@ -1,24 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
-
 var ListView = require("./listView.jsx");
 
 
 
-$.ajaxSetup({
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader('authorization','token' );
-    }
-});
 
 
-function toObject(arr){
-	var rv = {};
-	for (var i = 0; i < arr.length; ++i)
-	rv[i] = arr[i];
-	return rv;					
-			}
+
 
 
 var LoginRegister = React.createClass({
@@ -39,7 +28,7 @@ var LoginRegister = React.createClass({
 			
 			
 			
-			// $("#loginRegister").hide();
+			$("#loginRegister").hide();
 			var UserList = Backbone.Model.extend({
 				initialize:function() {
 					console.log("here is your data");
@@ -55,28 +44,23 @@ var LoginRegister = React.createClass({
 				success:function(resp){
 					var test=resp.toJSON();
 					console.log(test);
-					console.log(test.results);
+					console.log(test.results[0].title);
 					var mapped=test.results[0].item_set.map(function(obj){
 						return {
 
-							'image':obj.image
-						}
-
-					})
-					console.log(mapped);
-
+							'image':obj.image,
 							'name':obj.name,
 							'price':obj.price,
 							'image':obj.image,
 							'description':obj.description,
-							'item_link':obj.item_link
+							'item_link':obj.item_link,
+							
 						}
 
 					})
-					mappedTest = toObject(mapped);
-				ReactDOM.render(<ListView data={mappedTest}/>, document.getElementById("listView"));
 					
-
+				ReactDOM.render(<ListView data={mapped}/>, document.getElementById("listView"));
+				
 				}
 
 			})

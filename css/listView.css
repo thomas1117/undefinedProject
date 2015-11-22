@@ -1,0 +1,13 @@
+#listImg {
+	width:250px;
+}
+
+#listDiv {
+	float: left;
+	width:250px;
+	border:1px solid #f7f7f7;
+}
+
+#listPrice {
+	float: right;
+}
