@@ -1,7 +1,11 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+
 var Backbone = require('backbone');
 require('../../css/funderView.css');
+
+var LoginRegister = require("./loginRegister.jsx");
+
 
 
 var ListerView = Backbone.Model.extend({

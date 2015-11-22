@@ -7,6 +7,7 @@ require('../css/loginRegister.css');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+
 var Router = require('react-router');
 // var routes = require('/routes');
 
@@ -32,6 +33,8 @@ ReactDOM.render(<LoginRegister/>, document.getElementById('loginRegister'));
 Router.run(routes, function(Handler) {
 	React.render(<Handler/>, document.getElementById("container"));
 });
+
+
 
 
 

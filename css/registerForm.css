@@ -29,6 +29,8 @@ h2 {
 	height: 40px;
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
+	position: relative;
+	margin-bottom: 20px;
 }
 
 #expLab {
@@ -50,4 +52,9 @@ h2 {
 	margin:auto;
 	width:242px;
 
+}
+
+.errorVal {
+	position: absolute;
+	color:red;
 }
