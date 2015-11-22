@@ -11,7 +11,7 @@ var GuestView = Backbone.Model.extend({
 });
 
 var TheGuestView = Backbone.Collection.extend({
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/items/"
 });
 
 var theGuestView = new TheGuestView();
@@ -19,24 +19,9 @@ var theGuestView = new TheGuestView();
 theGuestView.fetch({
     success: function(resp) {
         var test =resp.toJSON();
-        
-        var mapped=test[0].results.map(function(obj){
-            return {
-                'item_set':obj.item_set
-            }
-        });
-
-        var namePriceImage=mapped[0].item_set.map(function(obj){
-        return {
-            'name':obj.name,
-            'image':obj.image,
-            'price':obj.price
-        }
-       })
-        console.log(namePriceImage);
-        
-       ReactDOM.render(<GuestView data={namePriceImage}/>, document.getElementById("guestView"));
-     
+        console.log(test);
+       	ReactDOM.render(<GuestView data={test}/>, document.getElementById("guestView"));
+     	
     },
 
     error: function(error) {
@@ -48,9 +33,9 @@ theGuestView.fetch({
 
 var GuestView = React.createClass({
 	render: function() {
-    var here = this.props.data.map(function(obj) {
-        console.log(obj);
-        return(
+    
+      var here=this.props.data.map(function(obj){
+      		return(
 			<div id="guestDiv">
 				<ul id="guestUl">
 					<li id="guestLi">
@@ -59,10 +44,12 @@ var GuestView = React.createClass({
                 		<span id="guestPrice">{obj.price}</span>
 					 </li>
 				</ul>
-				</div>
-		)
-		});
-		return(<div>{here}</div>);
+			</div>
+			)
+      });  
+        return(<div>{here}</div>)
+
+		
    }   
 });
 
