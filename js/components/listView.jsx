@@ -25,7 +25,7 @@ theListerView.fetch({
             
         });   
         console.log(mapped);
-       ReactDOM.render(<ListerView data={mapped[0]}/>, document.getElementById("listView"));     
+       ReactDOM.render(<ListerView data={mapped}/>, document.getElementById("listView"));     
     },
     error: function(error) {
         console.log(error);

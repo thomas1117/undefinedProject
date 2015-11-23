@@ -10,7 +10,7 @@ var listDetailView = Backbone.Model.extend({
 });
 
 var ListDetailView = Backbone.Collection.extend({
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/lists/"
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/items/"
 });
 
 var myListDetailView = new ListDetailView();
@@ -18,21 +18,8 @@ var myListDetailView = new ListDetailView();
 myListDetailView.fetch({
 	success: function(resp) {
 		var test = resp.toJSON();
-		var mapped=test[0].results.map(function(obj){
-			return {
-				'item_set': obj.item_set
-			}
-		});
-		var pageData=mapped[0].item_set.map(function(obj){
-			return {
-				'title': obj.title,
-				'name': obj.name,
-				'price': obj.price,
-				'image': obj.image				
-			}
-		})
-		console.log(pageData);
-		ReactDOM.render(<listDetailView data={mapped[0]}/>, document.getElementById('listDetail'));
+		console.log(test);
+		ReactDOM.render(<listDetailView data={test}/>, document.getElementById('listDetail'));
 	},
 	error: function(error) {
 		console.log(error);
@@ -42,15 +29,14 @@ myListDetailView.fetch({
 var theListDetailView = React.createClass({
 	render: function () {
 		var here=this.props.data.map(function(obj) {
-			console.log(obj);
 			return (
               <div id="listsDiv">
 	              <ul id="listsUl">
 		              <li id="listsLi">
-		                 <img id="listsImg" src={this.props.data.image}/>
-						 <span id="listsTitle">{this.props.data.title}</span>
-		                 <span id="listsName">{this.props.data.name}</span>
-		                 <span id="listsPrice">{this.props.data.price}</span>
+		                 <img id="listsImg" src={obj.image}/>
+						 <span id="listsTitle">{obj.title}</span>
+		                 <span id="listsName">{obj.name}</span>
+		                 <span id="listsPrice">{obj.price}</span>
 		              </li>
 	              </ul>
               </div>
