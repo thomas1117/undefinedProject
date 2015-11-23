@@ -1,0 +1,60 @@
+
+
+#guestDiv {
+	width:250px;
+	margin-top: 40px;
+	float: left;
+	margin-right: 40px;
+	border: 2px solid #f7f7f7;
+	position: relative;
+}
+
+#guestPrice {
+	position: absolute;
+	bottom:3px;
+	right:5px;
+	
+}
+
+#guestName {
+	float: left;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	width:180px;
+}
+
+#guestPrice:before {
+	content: "$";
+}
+
+
+
+#guestImg {
+	width:250px;
+	height:250px;
+	
+}
+
+#guestUl {
+	margin: 0;
+	padding:0;
+}
+
+#guestLI {
+	width:250px;
+}
+
+li {
+	list-style-type: none;
+}
+
+#guestViewHeader {
+	width: 1000px;
+	height: 30px;
+	background-color: #F6F6F6;
+	padding: 0;
+	margin: 0;
+	
+	clear:both;
+}

@@ -39,7 +39,7 @@ theFundView.fetch({
      	
     
      	
-       ReactDOM.render(<FunderView data={namePriceImage}/>, document.getElementById("funderView"));
+       ReactDOM.render(<FunderView data={namePriceImage}/>, document.getElementById("container"));
      
     },
 

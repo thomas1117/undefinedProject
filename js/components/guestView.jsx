@@ -34,20 +34,20 @@ theGuestView.fetch({
 var GuestView = React.createClass({
 	render: function() {
     
-      var here=this.props.data.map(function(obj){
+      var bla=this.props.data.map(function(obj) {
       		return(
-			<div id="guestDiv">
-				<ul id="guestUl">
-					<li id="guestLi">
-					 	<img id="guestImg" src={obj.image}/>
-                		<span id="guestName">{obj.name}</span>
-                		<span id="guestPrice">{obj.price}</span>
-					 </li>
-				</ul>
-			</div>
-			)
-      });  
-        return(<div>{here}</div>)
+        			<div id="guestDiv">
+        				<ul id="guestUl">
+        					<li id="guestLi">
+        					 	<img id="guestImg" src={obj.image}/>
+                        		<span id="guestName">{obj.name}</span>
+                        		<span id="guestPrice">{obj.price}</span>
+        					 </li>
+        				</ul>
+        			</div>
+			       )
+      })  
+        return(<div>{bla}</div>)
 
 		
    }   

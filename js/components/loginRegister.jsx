@@ -5,12 +5,16 @@ var ListView = require("./listView.jsx");
 
 
 
-
-
-
-
-
 var LoginRegister = React.createClass({
+	_click:function(e) {
+		e.preventDefault();
+		console.log("test");
+		$("#registerForm").show();
+	},
+	_guest:function(e) {
+		e.preventDefault();
+		$("#guestView").show();
+	},
 	_submit: function(e) {
 		e.preventDefault();
 		userVerified = new UserVerify();
@@ -33,6 +37,7 @@ var LoginRegister = React.createClass({
 				initialize:function() {
 					console.log("here is your data");
 				}
+				
 			})
 			var UserListCollect = Backbone.Collection.extend({
 				url:"https://afternoon-scrubland-9189.herokuapp.com/api/lists/?username="+username,
@@ -43,8 +48,10 @@ var LoginRegister = React.createClass({
 				url:"https://afternoon-scrubland-9189.herokuapp.com/api/lists/?username="+username,
 				success:function(resp){
 					var test=resp.toJSON();
-					console.log(test);
-					console.log(test.results[0].title);
+					
+					
+					$("#listView").show()
+					$("#nav").show().html('<span id="yourList">Your List</span>')
 					var mapped=test.results[0].item_set.map(function(obj){
 						return {
 
@@ -53,12 +60,12 @@ var LoginRegister = React.createClass({
 							'price':obj.price,
 							'image':obj.image,
 							'description':obj.description,
-							'item_link':obj.item_link,
+							'item_link':obj.item_link
 							
 						}
 
 					})
-					
+				
 				ReactDOM.render(<ListView data={mapped}/>, document.getElementById("listView"));
 				
 				}
@@ -87,7 +94,7 @@ var LoginRegister = React.createClass({
 						<input id="userName" placeholder="Username"/>
 						
 						<input id="password" placeholder="Password"/>
-						<button type='submit'>Submit</button>
+						<button href="/user/" type='submit'>Submit</button>
 					</form>
 				</div>
 
@@ -96,8 +103,8 @@ var LoginRegister = React.createClass({
 					<form>
 						
 						<input id="email" placeholder="Your Email"/>
-						<button id="signUp">Sign Up</button>
-						<button id="guest">Guest</button>
+						<button id="signUp" onClick={this._click}>Sign Up</button>
+						<button id="guest" onClick={this._guest}>Guest</button>
 					</form>
 				</div>
 			</div>

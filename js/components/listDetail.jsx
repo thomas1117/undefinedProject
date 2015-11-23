@@ -32,7 +32,7 @@ myListDetailView.fetch({
             }
         })
         console.log(pageData);
-        ReactDOM.render(<listDetailView data={pageData}/>, document.getElementById('listDetail'));
+        ReactDOM.render(<listDetailView data={pageData}/>, document.getElementById('container'));
     },
     error: function(error) {
         console.log(error);

@@ -1,20 +1,31 @@
 var React = require('react');
-var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.route;
+var ReactDOM = require('react-dom');
+var backbone= require('backbone');
 
-var Routes = (
-	<DefaultRoute Handler={require("/")} />
-	<Route name = "funderDetail" handler={require(".components/funderDetail")} />
-	<Route name = "funderView" handler={require(".components/funderView")} />
-	<Route name = "guestDetail" handler={require(".components/guestDetail")} />
-	<Route name = "guestView" handler={require(".components/guestView")} />
-	<Route name = "listDetail" handler={require(".components/listDetail")} />
-	<Route name = "listItem" handler={require(".components/listItem")} />
-	<Route name = "fullListPage" handler={require(".components/listView")} />
-	<Route name = "loginRegister" handler={require(".components/loginRegister")} />
-	<Route name = "registerForm" handler={require(".components/registerForm")} />
-</Route>
-);
+var Router=Backbone.Router.extend({
+	initialize:function() {
+		Backbone.history.start({pushState:true});
+	},
+	routes:[
+		'user/:username': 'user',
+		"":"index"
+	]
+})
 
-module.exports = routes;
+
+var router = new Router();
+
+router.on('route:user', function() {
+	ReactDOM.render(<ListView />, document.getElementById("listView"));
+})
+
+
+$('body').on('submit', 'button', function(e){
+	e.preventDefault();
+
+	router.navigate(href, {trigger:true})
+})
+
+
+
+

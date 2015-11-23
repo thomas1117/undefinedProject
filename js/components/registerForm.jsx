@@ -16,9 +16,10 @@ var RegisterForm = React.createClass({
 	e.preventDefault();
 
 	model.save(null,{
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/user/",
 	success:function(resp) {
 		console.log(resp);
+		$("#registerForm").hide()
 	},
 	error:function(err) {
 		console.log(err);
@@ -33,9 +34,10 @@ var RegisterForm = React.createClass({
 			return(
 				<div id="registerDiv">
 				<div id = "header">
-					<h2>Register</h2>
+					<h2>Register</h2><span id="close">X</span>
+
 				</div>
-					<form id="registerForm" onSubmit={this._submit}>
+					<form id="regForm" onSubmit={this._submit}>
 					<div id="inputDiv">
 						<span id="fNameLabel" className="errorVal"></span>
 						<input id="fName" placeholder="First Name"/>
@@ -71,7 +73,7 @@ var User = Backbone.Model.extend({
 		if(!attrs.username) {
 			$("#usernameLabel").html("username is required")
 		}
-		if(!attrs.username) {
+		if(!attrs.password) {
 			$("#passwordLabel").html("password is required")
 		}
 	}
@@ -83,6 +85,12 @@ var UserInput = Backbone.Collection.extend({
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
 });
 
+
+
+$("body").on('click','#close', function(){
+	$("#registerForm").hide();
+	
+});
 
 	
 
