@@ -25,7 +25,7 @@ var RegisterForm = React.createClass({
 		console.log(err);
 	}
 
-});
+	});
 		
 	},
 

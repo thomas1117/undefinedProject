@@ -2,83 +2,26 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
 var ListView = require("./listView.jsx");
+var Routes = require("../routes.jsx");
 
 
 
 var LoginRegister = React.createClass({
-	_click:function(e) {
-		e.preventDefault();
-		console.log("test");
-		$("#registerForm").show();
-	},
-	_guest:function(e) {
-		e.preventDefault();
-		$("#guestView").show();
-	},
 	_submit: function(e) {
 		e.preventDefault();
-		userVerified = new UserVerify();
-		
-		userVerified.set({
-		username: $("#userName").val(),
-		password: $("#password").val()
-	 });
-
-		userVerified.save(null,{
-			url: "https://afternoon-scrubland-9189.herokuapp.com/api/api-token-auth/",
-			success:function(resp) {
-			var test=resp.toJSON();
-			username=test.username;
+		var username = $("#userName").val();
+		var password = $("#password").val();
+		$.ajax({
+			url:"https://afternoon-scrubland-9189.herokuapp.com/api/api-token-auth/",
+			method:'post',
+			data: {username: username, password:password}
+		}).then(function(resp){
+			console.log(resp);
+			setToken(resp.token);
+			this.props.router.navigate('/user');
 			
-			
-			
-			$("#loginRegister").hide();
-			var UserList = Backbone.Model.extend({
-				initialize:function() {
-					console.log("here is your data");
-				}
-				
-			})
-			var UserListCollect = Backbone.Collection.extend({
-				url:"https://afternoon-scrubland-9189.herokuapp.com/api/lists/?username="+username,
-			})
 
-			var userList = new UserList();
-			userList.fetch({
-				url:"https://afternoon-scrubland-9189.herokuapp.com/api/lists/?username="+username,
-				success:function(resp){
-					var test=resp.toJSON();
-					
-					
-					$("#listView").show()
-					$("#nav").show().html('<span id="yourList">Your List</span>')
-					var mapped=test.results[0].item_set.map(function(obj){
-						return {
-
-							'image':obj.image,
-							'name':obj.name,
-							'price':obj.price,
-							'image':obj.image,
-							'description':obj.description,
-							'item_link':obj.item_link
-							
-						}
-
-					})
-				
-				ReactDOM.render(<ListView data={mapped}/>, document.getElementById("listView"));
-				
-				}
-
-			})
-				
-
-		},
-			error:function(err) {
-				console.log(err);
-			}
-		});
-
+		})
 	},
 	render: function(){
 		return(
@@ -94,7 +37,7 @@ var LoginRegister = React.createClass({
 						<input id="userName" placeholder="Username"/>
 						
 						<input id="password" placeholder="Password"/>
-						<button href="/user/" type='submit'>Submit</button>
+						<button type='submit'>Submit</button>
 					</form>
 				</div>
 
@@ -116,26 +59,27 @@ var LoginRegister = React.createClass({
 
 module.exports = LoginRegister;
 
-var UserVerify = Backbone.Model.extend({
-		initialize: function() {
-			console.log("a new detfund has been created");
-		}
+
+
+
+function setToken(token) {
+	var backboneSync = Backbone.sync;
+	Backbone.sync = function(method,model,options) {
+		options.headers = {
+			'Authorization': 'Bearer' + token
+		};
+
+		backboneSync(method,model,options);
+	};
+}
+
+
+
+
+				
+
 		
-});
-
-var UserVerified = Backbone.Collection.extend({
-
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
-});
-
-userVerified = new UserVerify();
-
-
-
-
-
-
-
+			
 
 
 

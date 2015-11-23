@@ -6,7 +6,7 @@
 	display: none;
 }
 #guestView {
-	display: block;
+	display: none;
 }
 #listDetail {
 	display: none;
