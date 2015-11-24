@@ -11,6 +11,7 @@ var LoginRegister = React.createClass({
 
 	_reg: function(e) {
 		e.preventDefault();
+		console.log("test");
 		$("#registerForm").show();
 	},
 	_submit: function(e) {
@@ -24,7 +25,7 @@ var LoginRegister = React.createClass({
 			method:'post',
 			data: {username: username, password:password}
 		}).then(function(resp){
-
+			console.log(resp);
 			setToken(resp.token);
 			router.navigate('user/' + username, {trigger:true});
 		})
@@ -85,10 +86,9 @@ $("body").on('click','#close', function(){
 	
 });
 
-$("body").on('click','#submitReg',function(e){
-	e.preventDefault();
-	$("#registerForm").show();
-});
+
+
+
 				
 
 		

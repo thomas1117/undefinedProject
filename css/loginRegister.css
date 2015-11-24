@@ -1,3 +1,8 @@
+#formContainer {
+	background-color: #f7f7f7;
+	height:300px;
+	width:700px;
+}
 #loginHeader {
 	height:60px;
 	background-color: #0489D6;
@@ -14,7 +19,8 @@
 }
 
 #log {
-	padding-right:260px;
+	padding-right:240px;
+	padding-left: 20px;
 	font-size: 20px;
 	color:#fff;
 	position: relative;

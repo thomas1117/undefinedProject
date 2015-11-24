@@ -1,14 +1,25 @@
-#listImg {
+.listImg {
 	width:250px;
 	height:250px;
 }
 
-#listDiv {
+.listDiv {
 	float: left;
 	width:250px;
 	border:1px solid #f7f7f7;
+	position: relative;
 }
 
-#listPrice {
-	float: right;
+.listPrice {
+	position: absolute;
+	bottom:3px;
+	right:5px;
+}
+
+.listName {
+	float: left;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	width:180px;
 }

@@ -34,19 +34,7 @@ theFundView.fetch({
        	}
        })
      	
-
-      function toObject(arr) {
-      var rv = {};
-      for (var i = 0; i < arr.length; ++i)
-      rv[i] = arr[i];
-      return rv;
-      }
-
-      
-     	
-    
-     	
-       ReactDOM.render(<FunderView data={namePriceImage}/>, document.getElementById("funderView"));
+      ReactDOM.render(<FunderView data={namePriceImage}/>, document.getElementById("funderView"));
      
     },
 
@@ -62,12 +50,12 @@ var FunderView = React.createClass({
       var here = this.props.data.map(function(obj){
          
          return(           
-            <div id="funderDiv">
-            <ul id="funderUl">
-            <li id="funderLi">
-               <img id="funderImg" src={obj.image}/>
-               <span id="funderName">{obj.name}</span>
-               <span id="funderPrice">{obj.price}</span>
+            <div className="funderDiv">
+            <ul className="funderUl">
+            <li className="funderLi">
+               <img className="funderImg" src={obj.image}/>
+               <span className="funderName">{obj.name}</span>
+               <span className="funderPrice">{obj.price}</span>
             </li>
             </ul>
             </div>

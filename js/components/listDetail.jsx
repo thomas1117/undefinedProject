@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
-require('../../css/funderView.css');
+
 
 var listDetailView = Backbone.Model.extend({
         initialize: function() {
@@ -44,13 +44,13 @@ var theListDetailView = React.createClass({
         var here=this.props.data.map(function(obj) {
             console.log(obj);
             return (
-             <div id="listsDiv">
-                  <ul id="listsUl">
-                      <li id="listsLi">
-                         <img id="listsImg" src={obj.image}/>
-                         <span id="listsTitle">{obj.title}</span>
-                         <span id="listsName">{obj.name}</span>
-                         <span id="listsPrice">{obj.price}</span>
+             <div className="listsDiv">
+                  <ul className="listsUl">
+                      <li className="listsLi">
+                         <img className="listsImg" src={obj.image}/>
+                         <span className="listsTitle">{obj.title}</span>
+                         <span className="listsName">{obj.name}</span>
+                         <span className="listsPrice">{obj.price}</span>
                       </li>
                   </ul>
              </div>

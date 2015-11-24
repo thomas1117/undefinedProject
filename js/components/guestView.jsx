@@ -1,6 +1,5 @@
 var React = require('react');
 
-
 var GuestView = React.createClass({
   render: function () {
     var bla = this.props.data.map(function(obj){

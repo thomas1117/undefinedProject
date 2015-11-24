@@ -16,7 +16,7 @@ var RegisterForm = React.createClass({
 	e.preventDefault();
 
 	model.save(null,{
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/user/",
+	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/",
 	success:function(resp) {
 		console.log(resp);
 		$("#registerForm").hide()

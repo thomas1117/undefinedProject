@@ -2,43 +2,43 @@
 
 /*CSS For FUNDERVIEW*/
 
-#funderDiv {
+.funderDiv {
 	width:255px;
 	margin-top: 50px;
 	float: left;
 	margin-right: 40px;
 }
 
-#funderPrice {
+.funderPrice {
 	float: right;
 	color: #0489D6;
 }
 
-#funderPrice::before {
+.funderPrice::before {
 	content: "$";
 }
 
-#funderName {
+.funderName {
 	color: #0489D6;
 }
 
-#funderImg {
+.funderImg {
 	width:250px;
 	height:250px;
 	border: 2px solid #0489D6;
 }
 
-#funderUl {
+.funderUl {
 	float: left;
 }
 
-#funderLi {
+.funderLi {
 	float: left;
 	list-style-type: none;
 	display: inline-block;
 }
 
-#funderViewHeader {
+.funderViewHeader {
 	width: 1000px;
 	height: 30px;
 	background-color: #F6F6F6;
@@ -51,7 +51,7 @@
 
 /*CSS For LISTERVIEW*/
 
-#addListButton {
+/*#addListButton {
 	width:90px;
 	padding:10px;
 	border-radius:5px;
@@ -143,47 +143,47 @@
 
 
 
-#listsDiv {
+.listsDiv {
 	width:255px;
 	margin-top: 50px;
 	float: left;
 	margin-right: 40px;
 }
 
-#listsPrice {
+.listsPrice {
 	float: right;
 	color: #0489D6;
 }
 
-#listsPrice::before {
+.listsPrice::before {
 	content: "$";
 }
 
-#listsName {
+.listsName {
 	color: #0489D6;
 }
 
-#listsTitle {
+.listsTitle {
 	color: #0489D6;
 }
 
-#listsImg {
+.listsImg {
 	width:250px;
 	height:250px;
 	border: 2px solid #0489D6;
 }
 
-#listsUl {
+.listsUl {
 	float: left;
 }
 
-#listsLi {
+.listsLi {
 	float: left;
 	list-style-type: none;
 	display: inline-block;
 }
 
-#listsViewHeader {
+.listsViewHeader {
 	width: 1000px;
 	height: 30px;
 	background-color: #F6F6F6;
@@ -193,7 +193,7 @@
 	clear:both;
 }
 
-#container {
+.container {
 	width:900px
-}
+}*/
 

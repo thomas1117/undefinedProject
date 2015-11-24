@@ -24,19 +24,15 @@ var ListItem = React.createClass({
 			console.log(err);
 		}
 
-});
-		$("#titleAdd").val('');
-		$("#priceAdd").val('');	
-		$("#urlAdd").val('');	
-		$("#imgAdd").val('');
-		$("#descriptionAdd").val('');	
-		},
+		});
+		
+	},
 	render: function() {
 		return (
 			<div id="addDiv">
 				<form className="addItemForm" onSubmit={this._submit}>
 					<div id="addHeader">
-					<h2>Add Item</h2>
+					<h2>Add Item</h2><span id="closeAdd">X</span>
 					</div>
 					<div id="inputAddDiv">
 					<input id="titleAdd" placeholder="title"/><br />
@@ -69,3 +65,7 @@ var UserInput = Backbone.Collection.extend({
 	url: "https://afternoon-scrubland-9189.herokuapp.com/api/users/"
 });
 
+$("body").on('click',"#closeAdd",function(e){
+	e.preventDefault();
+	$('#addDiv').hide();
+})

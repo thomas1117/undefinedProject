@@ -3,7 +3,10 @@ var ReactDOM = require('react-dom');
 var backbone= require('backbone');
 var LoginRegister = require('./components/loginRegister.jsx');
 var ListView = require('./components/listView.jsx');
+var ListItem = require('./components/listItem.jsx');
 var GuestView = require('./components/guestView.jsx');
+var RegisterForm = require('./components/registerForm.jsx');
+var Nav = require('./components/nav.jsx');
 
 var Router=Backbone.Router.extend({
 	initialize:function() {
@@ -12,22 +15,21 @@ var Router=Backbone.Router.extend({
 	routes:{
 		'user/:username': 'user',
 		'guest/':'guest',
-		'user/add': 'addUser',
 		"":"index"
 	},
 	index: function(){
-		ReactDOM.render(<LoginRegister router={this} />, document.getElementById('loginRegister'))
+		ReactDOM.render(<LoginRegister router={this} />, document.getElementById('loginRegister'));
+		ReactDOM.render(<RegisterForm/>,document.getElementById('registerForm'));
 	}
 });
 
 
 var router = new Router();
 
-
-
 router.on('route:user', function(username) {
 	$("#loginRegister").hide();
 	$("#guestView").show();
+	ReactDOM.render(<Nav />, document.getElementById('nav'));
 			
 	var UserList = Backbone.Model.extend({
 		initialize:function() {
@@ -44,7 +46,7 @@ router.on('route:user', function(username) {
 		url:"https://afternoon-scrubland-9189.herokuapp.com/api/lists/?username=" + username,
 		success:function(resp){
 			var test=resp.toJSON();
-			
+			console.log(test.results[0].title);
 			var mapped=test.results[0].item_set.map(function(obj){
 				return {
 
@@ -60,7 +62,7 @@ router.on('route:user', function(username) {
 			})
 		
 		ReactDOM.render(<ListView data={mapped}/>,document.getElementById('listView'));
-		
+		ReactDOM.render(<ListItem/>, document.getElementById('listItem'));
 
 	
 		}

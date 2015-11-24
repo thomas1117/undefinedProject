@@ -30,3 +30,13 @@
 	width:300;
 	margin:auto;
 }
+
+#closeAdd {
+	position: absolute;
+	top:15px;
+	right:5px;
+	background-color: #fff;
+	padding:5px;
+	border-radius:10px;
+
+}
