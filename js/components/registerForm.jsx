@@ -23,7 +23,7 @@ var RegisterForm = React.createClass({
 	},
 	error:function(err) {
 		console.log(err);
-	}
+	},
 
 	});
 		

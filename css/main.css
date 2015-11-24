@@ -15,7 +15,7 @@
 	display: none;
 }
 #listView {
-	display: none;
+	display: block;
 }
 #registerForm  {
 	display: none;

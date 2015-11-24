@@ -3,37 +3,29 @@ var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
 require('../../css/funderView.css');
 require('../../css/listView.css');
-var LoginRegister = require("./loginRegister.jsx");
-
-
 
 
 
 var ListView = React.createClass({
 	render: function () {
-		
+		console.log(this.props);
 		var here=this.props.data.map(function(obj) {
-			return <SubListView obj={obj} />
+			
+				return(
+						<div id="listDiv">
+							<span id="listTitle"></span><span id="deadline"></span>
+							<img id="listImg" src={obj.image}/>
+							<span id="listName">{obj.name}</span>
+							<span id="listPrice">${obj.price}</span>
+						</div>
+					)
 		})
-		return(
-			<div id="container2">{here}</div>
-		)
+				return(<div class="container2">{here}</div>)
        
  	}	
 });
 
-var SubListView = React.createClass({
-	render: function () {
-		return (
-			<div id="listDiv">
-				<span id="listTitle"></span><span id="deadline"></span>
-				<img id="listImg" src={this.props.obj.image}/>
-				<span id="listName">{this.props.obj.name}</span>
-				<span id="listPrice">${this.props.obj.price}</span>
-			  </div>
-		)
-	}
-})
+
 		
 module.exports = ListView;
 

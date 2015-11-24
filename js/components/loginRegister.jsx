@@ -1,26 +1,27 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
-var ListView = require("./listView.jsx");
-var Routes = require("../routes.jsx");
-
-
 
 var LoginRegister = React.createClass({
+	_guest: function(e) {
+		e.preventDefault();
+		var router =this.props.router;
+		router.navigate('guest/');
+
+	},
 	_submit: function(e) {
 		e.preventDefault();
+		var router=this.props.router;
 		var username = $("#userName").val();
 		var password = $("#password").val();
+		
 		$.ajax({
 			url:"https://afternoon-scrubland-9189.herokuapp.com/api/api-token-auth/",
 			method:'post',
 			data: {username: username, password:password}
 		}).then(function(resp){
-			console.log(resp);
-			setToken(resp.token);
-			this.props.router.navigate('/user');
-			
 
+			setToken(resp.token);
+			router.navigate('user/' + username, {trigger:true});
 		})
 	},
 	render: function(){
@@ -31,7 +32,6 @@ var LoginRegister = React.createClass({
 				<span id="reg">Register</span>
 				</div>
 				<div id="login">
-					
 					<form method='POST' onSubmit={this._submit}>
 						
 						<input id="userName" placeholder="Username"/>
@@ -46,7 +46,7 @@ var LoginRegister = React.createClass({
 					<form>
 						
 						<input id="email" placeholder="Your Email"/>
-						<button id="signUp" onClick={this._click}>Sign Up</button>
+						<button id="signUp">Sign Up</button>
 						<button id="guest" onClick={this._guest}>Guest</button>
 					</form>
 				</div>

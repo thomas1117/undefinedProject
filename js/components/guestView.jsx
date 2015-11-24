@@ -4,30 +4,7 @@ var Backbone = require('backbone');
 require('../../css/funderView.css')
 
 
-var GuestView = Backbone.Model.extend({
-	initialize: function() {
-		console.log("a new guest view has been created");
-	}
-});
 
-var TheGuestView = Backbone.Collection.extend({
-	url: "https://afternoon-scrubland-9189.herokuapp.com/api/items/"
-});
-
-var theGuestView = new TheGuestView();
-
-theGuestView.fetch({
-    success: function(resp) {
-        var test =resp.toJSON();
-        console.log(test);
-       	ReactDOM.render(<GuestView data={test}/>, document.getElementById("guestView"));
-     	
-    },
-
-    error: function(error) {
-        console.log(error);
-    }
-});
 
 
 
