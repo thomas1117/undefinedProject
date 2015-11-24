@@ -1,24 +1,6 @@
 
-#funderDetail {
-	display: none;
-}
-#funderView {
-	display: none;
-}
-#guestView {
-	display: none;
-}
-#listDetail {
-	display: none;
-}
-#listItem {
-	display: none;
-}
-#listView {
-	display: block;
-}
 #registerForm  {
-	display: none;
+	display: block;
 	position: absolute;
 	
 }

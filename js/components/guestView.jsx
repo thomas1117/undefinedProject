@@ -1,35 +1,24 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
-var Backbone = require('backbone');
-require('../../css/funderView.css')
-
-
-
-
 
 
 var GuestView = React.createClass({
-	render: function() {
-    
-      var bla=this.props.data.map(function(obj) {
-      		return(
-        			<div id="guestDiv">
-        				<ul id="guestUl">
-        					<li id="guestLi">
-        					 	<img id="guestImg" src={obj.image}/>
-                        		<span id="guestName">{obj.name}</span>
-                        		<span id="guestPrice">{obj.price}</span>
-        					 </li>
-        				</ul>
-        			</div>
-			       )
-      })  
-        return(<div>{bla}</div>)
+  render: function () {
+    var bla = this.props.data.map(function(obj){
+      return (
+        <div key={obj.id} className="guestDiv">
+          <ul className="guestUl">
+            <li className="guestLi">
+              <img className="guestImg" src={obj.image} />
+              <span className="guestName">{obj.name}</span>
+              <span className="guestPrice">{obj.price}</span>
+            </li>
+          </ul>
+        </div>
+      )
+    });
 
-		
-   }   
+    return <div>{bla}</div>;
+  }
 });
 
 module.exports = GuestView;
-
-

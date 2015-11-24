@@ -5,8 +5,13 @@ var LoginRegister = React.createClass({
 	_guest: function(e) {
 		e.preventDefault();
 		var router =this.props.router;
-		router.navigate('guest/');
+		router.navigate('guest/', {trigger:true});
 
+	},
+
+	_reg: function(e) {
+		e.preventDefault();
+		$("#registerForm").show();
 	},
 	_submit: function(e) {
 		e.preventDefault();
@@ -46,7 +51,7 @@ var LoginRegister = React.createClass({
 					<form>
 						
 						<input id="email" placeholder="Your Email"/>
-						<button id="signUp">Sign Up</button>
+						<button id="signUp" onClick={this._reg}>Sign Up</button>
 						<button id="guest" onClick={this._guest}>Guest</button>
 					</form>
 				</div>
@@ -75,7 +80,15 @@ function setToken(token) {
 
 
 
+$("body").on('click','#close', function(){
+	$("#registerForm").hide();
+	
+});
 
+$("body").on('click','#submitReg',function(e){
+	e.preventDefault();
+	$("#registerForm").show();
+});
 				
 
 		

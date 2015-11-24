@@ -8,7 +8,7 @@ require('../../css/listView.css');
 
 var ListView = React.createClass({
 	render: function () {
-		console.log(this.props);
+		
 		var here=this.props.data.map(function(obj) {
 			
 				return(
@@ -16,7 +16,7 @@ var ListView = React.createClass({
 							<span id="listTitle"></span><span id="deadline"></span>
 							<img id="listImg" src={obj.image}/>
 							<span id="listName">{obj.name}</span>
-							<span id="listPrice">${obj.price}</span>
+							<span id="listPrice">{obj.price}</span>
 						</div>
 					)
 		})

@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var backbone= require('backbone');
 var LoginRegister = require('./components/loginRegister.jsx');
 var ListView = require('./components/listView.jsx');
-var ListView = require('./components/guestView.jsx');
+var GuestView = require('./components/guestView.jsx');
 
 var Router=Backbone.Router.extend({
 	initialize:function() {
@@ -11,7 +11,7 @@ var Router=Backbone.Router.extend({
 	},
 	routes:{
 		'user/:username': 'user',
-		'guest':'guest',
+		'guest/':'guest',
 		'user/add': 'addUser',
 		"":"index"
 	},
@@ -27,6 +27,7 @@ var router = new Router();
 
 router.on('route:user', function(username) {
 	$("#loginRegister").hide();
+	$("#guestView").show();
 			
 	var UserList = Backbone.Model.extend({
 		initialize:function() {
@@ -69,24 +70,24 @@ router.on('route:user', function(username) {
 });	
 
 router.on('route:guest', function() {
-
-	var GuestView = Backbone.Model.extend({
+	$("#loginRegister").hide();
+	var GuestModel = Backbone.Model.extend({
 		initialize: function() {
 			console.log("a new guest view has been created");
 		}
 	});
 
-	var TheGuestView = Backbone.Collection.extend({
+	var TheGuestCollection = Backbone.Collection.extend({
 		url: "https://afternoon-scrubland-9189.herokuapp.com/api/items/"
 	});
 
-	var theGuestView = new TheGuestView();
+	var theGuestCollection = new TheGuestCollection();
 
-	theGuestView.fetch({
+	theGuestCollection.fetch({
 	    success: function(resp) {
 	        var test =resp.toJSON();
 	        console.log(test);
-	       	ReactDOM.render(<GuestView data={test}/>, document.getElementById("guestView"));
+	       	ReactDOM.render(<GuestView data={test} />, document.getElementById("guestView"));
 	     	
 	    },
 

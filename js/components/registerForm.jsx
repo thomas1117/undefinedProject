@@ -50,7 +50,7 @@ var RegisterForm = React.createClass({
 						<span id="passwordLabel"className="errorVal"></span>
 						<input id="passwordForm" placeholder="password"/>
 						<span className="errorVal"></span>
-						<button id="submitReg" type="submit">Submit</button>
+						<button id="submitReg" onClick={this._submit} type="submit">Submit</button>
 					</div>
 					</form>
 				</div>
@@ -87,10 +87,7 @@ var UserInput = Backbone.Collection.extend({
 
 
 
-$("body").on('click','#close', function(){
-	$("#registerForm").hide();
-	
-});
+
 
 	
 
