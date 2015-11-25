@@ -1,8 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Backbone = require('backbone');
-require('../../css/funderView.css');
-require('../../css/listView.css');
+
 
 var ListView = React.createClass({
 	render: function () {
@@ -14,7 +13,7 @@ var ListView = React.createClass({
 							<span className="listTitle"></span><span id="deadline"></span>
 							<img className="listImg" src={obj.image}/>
 							<span className="listName">{obj.name}</span>
-							<span className="listPrice">{obj.price}</span>
+							<span className="listPrice">${obj.price}</span>
 						</div>
 					)
 		})

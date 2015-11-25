@@ -42,7 +42,7 @@ var LoginRegister = React.createClass({
 						
 						<input id="userName" placeholder="Username"/>
 						
-						<input id="password" placeholder="Password"/>
+						<input id="password" type="password" placeholder="Password"/>
 						<button type='submit'>Submit</button>
 					</form>
 				</div>
